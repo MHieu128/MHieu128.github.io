@@ -62,7 +62,14 @@ body {
 .nav-toggle, .theme-toggle { display: none; background: none; border: 1px solid var(--border); color: var(--text); padding: 6px 10px; border-radius: 8px; }
 .theme-toggle { width: 36px; height: 36px; display: inline-grid; place-items: center; }
 
-.hero { padding: 96px 0 64px; display: grid; align-items: center; }
+.hero { padding: 120px 0 80px; display: grid; align-items: center; position: relative; }
+.hero::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: -1;
+  background: radial-gradient(600px 200px at 10% 20%, color-mix(in oklab, var(--brand) 30%, transparent), transparent),
+              radial-gradient(700px 250px at 90% 10%, color-mix(in oklab, var(--accent) 25%, transparent), transparent);
+  filter: blur(18px); opacity: 0.6; animation: floatGlow 10s ease-in-out infinite alternate;
+}
+@keyframes floatGlow { from { transform: translateY(0); } to { transform: translateY(-10px); } }
 .hero-content h1 { font-size: clamp(32px, 6vw, 56px); line-height: 1.1; margin: 0 0 8px; }
 .gradient-text {
   background: linear-gradient(90deg, var(--brand), var(--accent));
@@ -72,8 +79,8 @@ body {
 .subtitle { color: var(--muted); margin: 0 0 18px; font-size: clamp(16px, 2.5vw, 20px); }
 
 .cta-group { display: flex; gap: 12px; flex-wrap: wrap; }
-.btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border); color: var(--text); text-decoration: none; background: linear-gradient(180deg, #0d1426, #0b1220); }
-.btn:hover { border-color: #355189; transform: translateY(-1px); transition: 150ms ease; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--border); color: var(--text); text-decoration: none; background: linear-gradient(180deg, #0d1426, #0b1220); transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease; }
+.btn:hover { border-color: #355189; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
 .btn.primary { background: linear-gradient(180deg, #1b335f, #122447); border-color: #355189; }
 .btn.small { padding: 8px 10px; font-size: 14px; }
 
@@ -88,13 +95,17 @@ h2 { font-size: 24px; margin: 0 0 16px; }
 .chips li { background: var(--card); border: 1px solid var(--border); padding: 8px 12px; border-radius: 999px; color: var(--text); }
 
 .timeline { display: grid; gap: 16px; }
-.card { background: var(--panel); border: 1px solid var(--border); border-radius: 16px; padding: 18px; box-shadow: var(--shadow); }
+.card { background: var(--panel); border: 1px solid var(--border); border-radius: 16px; padding: 18px; box-shadow: var(--shadow); transition: transform 180ms ease, box-shadow 180ms ease, border-color 200ms ease; }
+.card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(0,0,0,0.35); border-color: color-mix(in oklab, var(--brand) 30%, var(--border)); }
 .card header { display: flex; flex-direction: column; gap: 6px; margin-bottom: 8px; }
 .card h3 { margin: 0; font-size: 18px; }
 .meta { color: var(--muted); font-size: 14px; }
 
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
-.project .media { aspect-ratio: 16/9; border-radius: 12px; background: linear-gradient(90deg, #0c1427, #0f1a33); border: 1px solid var(--border); margin-bottom: 12px; }
+.project .media { aspect-ratio: 16/9; border-radius: 12px; background: linear-gradient(90deg, #0c1427, #0f1a33); border: 1px solid var(--border); margin-bottom: 12px; position: relative; overflow: hidden; }
+.project .media::before { content: ""; position: absolute; inset: -50%; background: conic-gradient(from 0deg, transparent 0 340deg, rgba(255,255,255,0.15) 360deg); animation: spin 6s linear infinite; }
+.project .media::after { content: ""; position: absolute; inset: 2px; border-radius: 10px; background: linear-gradient(90deg, #0c1427, #0f1a33); }
+@keyframes spin { to { transform: rotate(1turn); } }
 .skeleton { position: relative; overflow: hidden; }
 .skeleton::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent); transform: translateX(-100%); animation: shimmer 1.8s infinite; }
 @keyframes shimmer { 100% { transform: translateX(100%); } }
@@ -102,8 +113,7 @@ h2 { font-size: 24px; margin: 0 0 16px; }
 .project .tags span { background: #0e1830; border: 1px solid var(--border); padding: 4px 8px; border-radius: 999px; color: var(--muted); font-size: 13px; }
 .project .actions { display: flex; gap: 10px; }
 
-.resume-embed { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--card); }
-.resume-embed iframe { width: 100%; height: min(90vh, 920px); border: 0; background: #fff; }
+/* resume embed removed */
 
 .contact-list { list-style: none; padding: 0; display: grid; gap: 8px; }
 .contact-list a { color: var(--brand); text-decoration: none; }
@@ -123,6 +133,10 @@ h2 { font-size: 24px; margin: 0 0 16px; }
 /* Scroll reveal */
 .reveal { opacity: 0; transform: translateY(12px); transition: opacity 500ms ease, transform 500ms ease; }
 .reveal.show { opacity: 1; transform: translateY(0); }
+/* staggered animation helper */
+.reveal:nth-child(1) { transition-delay: 60ms; }
+.reveal:nth-child(2) { transition-delay: 120ms; }
+.reveal:nth-child(3) { transition-delay: 180ms; }
 
 /* Focus styles */
 :where(a, button).focus-visible, :where(a, button):focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; border-radius: 10px; }
