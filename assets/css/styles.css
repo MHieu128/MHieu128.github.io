@@ -15,12 +15,12 @@
 :root.light {
   --bg: #f7f8fb;
   --panel: #ffffff;
-  --text: #0e1320;
-  --muted: #5b6475;
-  --brand: #2151d8;
+  --text: #101828;
+  --muted: #475467;
+  --brand: #1e4bd8;
   --accent: #0aa3ab;
   --card: #ffffff;
-  --border: #e6e9f2;
+  --border: #d8deea;
   --shadow: 0 16px 30px rgba(10,15,25,0.07), inset 0 1px 0 rgba(255,255,255,0.8);
 }
 
@@ -52,12 +52,14 @@ body {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
 }
+.light .site-header { background: rgba(255,255,255,0.7); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
 .brand { color: var(--text); text-decoration: none; font-weight: 700; letter-spacing: 0.5px; font-size: 20px; }
 
 .nav { display: flex; gap: 18px; align-items: center; }
 .nav a { color: var(--muted); text-decoration: none; padding: 8px 10px; border-radius: 8px; }
 .nav a:hover { color: var(--text); background: rgba(255,255,255,0.05); }
+.light .nav a:hover { background: rgba(0,0,0,0.04); }
 .header-actions { display: flex; gap: 8px; align-items: center; }
 .nav-toggle, .theme-toggle { display: none; background: none; border: 1px solid var(--border); color: var(--text); padding: 6px 10px; border-radius: 8px; }
 .theme-toggle { width: 36px; height: 36px; display: inline-grid; place-items: center; }
@@ -76,41 +78,58 @@ body {
   -webkit-background-clip: text; background-clip: text; color: transparent;
   text-shadow: 0 0 20px color-mix(in srgb, var(--brand) 20%, transparent);
 }
+.light .gradient-text { text-shadow: 0 0 10px color-mix(in srgb, var(--brand) 30%, transparent); }
 .subtitle { color: var(--muted); margin: 0 0 18px; font-size: clamp(16px, 2.5vw, 20px); }
+.light .subtitle { color: #475467; }
 
 .cta-group { display: flex; gap: 12px; flex-wrap: wrap; }
 .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--border); color: var(--text); text-decoration: none; background: linear-gradient(180deg, #0d1426, #0b1220); transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease; }
 .btn:hover { border-color: #355189; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
-.btn.primary { background: linear-gradient(180deg, #1b335f, #122447); border-color: #355189; }
+.btn.primary { background: linear-gradient(180deg, #1b335f, #122447); border-color: #355189; color: #fff; }
 .btn.small { padding: 8px 10px; font-size: 14px; }
+.light .btn { background: linear-gradient(180deg, #ffffff, #f4f7fe); }
+.light .btn.primary { background: linear-gradient(180deg, color-mix(in oklab, var(--brand) 92%, white), color-mix(in oklab, var(--brand) 70%, white)); border-color: color-mix(in oklab, var(--brand) 60%, var(--border)); color: #fff; }
+.light .btn:hover { box-shadow: 0 8px 20px rgba(10,15,25,0.12); border-color: color-mix(in oklab, var(--brand) 40%, var(--border)); }
 
 .socials { display: flex; gap: 12px; margin-top: 14px; }
 .socials a { color: var(--muted); display: inline-grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; border: 1px solid var(--border); background: var(--panel); box-shadow: var(--shadow); }
 .socials a:hover { color: var(--text); transform: translateY(-1px); }
+.light .socials a { background: #ffffff; }
 
 h2 { font-size: 24px; margin: 0 0 16px; }
 .note { color: var(--muted); font-size: 14px; margin-top: 10px; }
 
 .chips { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
 .chips li { background: var(--card); border: 1px solid var(--border); padding: 8px 12px; border-radius: 999px; color: var(--text); }
+.light .chips li { background: #f9fbff; color: #344054; border-color: #e4e7ef; }
 
 .timeline { display: grid; gap: 16px; }
 .card { background: var(--panel); border: 1px solid var(--border); border-radius: 16px; padding: 18px; box-shadow: var(--shadow); transition: transform 180ms ease, box-shadow 180ms ease, border-color 200ms ease; }
 .card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(0,0,0,0.35); border-color: color-mix(in oklab, var(--brand) 30%, var(--border)); }
+.light .card:hover { box-shadow: 0 16px 28px rgba(10,15,25,0.12); }
 .card header { display: flex; flex-direction: column; gap: 6px; margin-bottom: 8px; }
 .card h3 { margin: 0; font-size: 18px; }
 .meta { color: var(--muted); font-size: 14px; }
+.light .meta { color: #667085; font-size: 15px; }
 
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
 .project .media { aspect-ratio: 16/9; border-radius: 12px; background: linear-gradient(90deg, #0c1427, #0f1a33); border: 1px solid var(--border); margin-bottom: 12px; position: relative; overflow: hidden; }
 .project .media::before { content: ""; position: absolute; inset: -50%; background: conic-gradient(from 0deg, transparent 0 340deg, rgba(255,255,255,0.15) 360deg); animation: spin 6s linear infinite; }
 .project .media::after { content: ""; position: absolute; inset: 2px; border-radius: 10px; background: linear-gradient(90deg, #0c1427, #0f1a33); }
+.light .project .media { background: linear-gradient(90deg, #f4f7fd, #eef2fb); }
+.light .project .media::after { background: linear-gradient(90deg, #f4f7fd, #eef2fb); }
 @keyframes spin { to { transform: rotate(1turn); } }
 .skeleton { position: relative; overflow: hidden; }
 .skeleton::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent); transform: translateX(-100%); animation: shimmer 1.8s infinite; }
+.light .skeleton::after { background: linear-gradient(90deg, transparent, rgba(0,0,0,0.06), transparent); }
 @keyframes shimmer { 100% { transform: translateX(100%); } }
 .project .tags { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0; }
 .project .tags span { background: #0e1830; border: 1px solid var(--border); padding: 4px 8px; border-radius: 999px; color: var(--muted); font-size: 13px; }
+.light .project .tags span { background: #f2f5fb; color: #5b6475; }
+
+/* Improve link readability on light */
+.light a { color: color-mix(in oklab, var(--brand) 92%, #0f1a2b 8%); }
+.light a:hover { color: color-mix(in oklab, var(--brand) 100%, #0f1a2b 0%); }
 .project .actions { display: flex; gap: 10px; }
 
 /* resume embed removed */
