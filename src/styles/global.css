@@ -1,0 +1,1232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════════════════
+   GLASSMORPHISM DESIGN SYSTEM — Gold Palette, Performance-First
+   ═══════════════════════════════════════════════════════════════ */
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 220 20% 10%;
+
+    --card: 220 15% 95%;
+    --card-foreground: 220 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+
+    /* ── Warm Pastel Gold Primary ── */
+    --primary: 35 52% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 92%;
+    --secondary-foreground: 220 20% 20%;
+
+    --muted: 220 15% 88%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 30 45% 46%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 85%;
+    --input: 220 15% 85%;
+    --ring: 35 52% 52%;
+
+    --radius: 0.75rem;
+
+    /* ── Warm Gold Spectrum ── */
+    --gold-glow: 38 58% 58%;
+    --gold-dark: 32 40% 38%;
+    --gold-soft: 35 38% 52%;
+
+    /* ── Glass Levels (Light) — Lower blur for perf ── */
+    --glass-subtle-bg: 0 0% 100% / 0.4;
+    --glass-subtle-border: 0 0% 100% / 0.5;
+    --glass-subtle-blur: 6px;
+
+    --glass-medium-bg: 0 0% 100% / 0.55;
+    --glass-medium-border: 0 0% 100% / 0.6;
+    --glass-medium-blur: 10px;
+
+    --glass-strong-bg: 0 0% 100% / 0.7;
+    --glass-strong-border: 0 0% 100% / 0.7;
+    --glass-strong-blur: 14px;
+
+    --glass-ultra-bg: 0 0% 100% / 0.85;
+    --glass-ultra-border: 0 0% 100% / 0.8;
+    --glass-ultra-blur: 16px;
+
+    /* ── Glass Glow (Warm Gold) ── */
+    --glass-inner-glow: 33 50% 55% / 0.08;
+    --glass-edge-glow: 33 50% 55% / 0.2;
+    --glass-outer-glow: 33 50% 55% / 0.15;
+  }
+
+  .dark {
+    --background: 225 25% 4%;
+    --foreground: 210 20% 93%;
+
+    --card: 225 20% 7%;
+    --card-foreground: 210 20% 93%;
+
+    --popover: 225 20% 7%;
+    --popover-foreground: 210 20% 93%;
+
+    /* ── Warm Pastel Gold (Dark) ── */
+    --primary: 35 55% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 225 15% 12%;
+    --secondary-foreground: 210 20% 93%;
+
+    --muted: 225 15% 15%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 30 48% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 225 15% 16%;
+    --input: 225 15% 16%;
+    --ring: 35 55% 55%;
+
+    /* ── Warm Gold (Dark) ── */
+    --gold-glow: 38 58% 60%;
+    --gold-dark: 32 35% 30%;
+    --gold-soft: 35 42% 48%;
+
+    /* ── Glass Levels (Dark) — Lower blur for perf ── */
+    --glass-subtle-bg: 225 25% 8% / 0.4;
+    --glass-subtle-border: 225 20% 20% / 0.3;
+    --glass-subtle-blur: 6px;
+
+    --glass-medium-bg: 225 25% 10% / 0.55;
+    --glass-medium-border: 225 20% 25% / 0.4;
+    --glass-medium-blur: 10px;
+
+    --glass-strong-bg: 225 25% 10% / 0.7;
+    --glass-strong-border: 225 20% 28% / 0.5;
+    --glass-strong-blur: 14px;
+
+    --glass-ultra-bg: 225 25% 12% / 0.85;
+    --glass-ultra-border: 225 20% 30% / 0.6;
+    --glass-ultra-blur: 16px;
+
+    /* ── Glass Glow (Dark Warm Gold) ── */
+    --glass-inner-glow: 33 50% 58% / 0.06;
+    --glass-edge-glow: 33 50% 58% / 0.25;
+    --glass-outer-glow: 33 50% 58% / 0.2;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     THEME: OCEAN — Cool Blue-Teal
+     ═══════════════════════════════════════════════════ */
+  .ocean {
+    --background: 210 35% 6%;
+    --foreground: 200 25% 92%;
+
+    --card: 210 30% 9%;
+    --card-foreground: 200 25% 92%;
+
+    --popover: 210 30% 9%;
+    --popover-foreground: 200 25% 92%;
+
+    --primary: 195 70% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 25% 14%;
+    --secondary-foreground: 200 25% 92%;
+
+    --muted: 210 25% 16%;
+    --muted-foreground: 200 15% 55%;
+
+    --accent: 175 55% 42%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 25% 18%;
+    --input: 210 25% 18%;
+    --ring: 195 70% 50%;
+
+    --gold-glow: 195 65% 55%;
+    --gold-dark: 200 40% 30%;
+    --gold-soft: 190 50% 45%;
+
+    --glass-subtle-bg: 210 35% 10% / 0.4;
+    --glass-subtle-border: 200 25% 22% / 0.3;
+    --glass-subtle-blur: 6px;
+
+    --glass-medium-bg: 210 35% 12% / 0.55;
+    --glass-medium-border: 200 25% 26% / 0.4;
+    --glass-medium-blur: 10px;
+
+    --glass-strong-bg: 210 35% 12% / 0.7;
+    --glass-strong-border: 200 25% 30% / 0.5;
+    --glass-strong-blur: 14px;
+
+    --glass-ultra-bg: 210 35% 14% / 0.85;
+    --glass-ultra-border: 200 25% 32% / 0.6;
+    --glass-ultra-blur: 16px;
+
+    --glass-inner-glow: 195 60% 50% / 0.06;
+    --glass-edge-glow: 195 60% 50% / 0.25;
+    --glass-outer-glow: 195 60% 50% / 0.2;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     THEME: FOREST — Deep Emerald Green
+     ═══════════════════════════════════════════════════ */
+  .forest {
+    --background: 150 30% 5%;
+    --foreground: 140 20% 92%;
+
+    --card: 150 25% 8%;
+    --card-foreground: 140 20% 92%;
+
+    --popover: 150 25% 8%;
+    --popover-foreground: 140 20% 92%;
+
+    --primary: 152 58% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 150 20% 13%;
+    --secondary-foreground: 140 20% 92%;
+
+    --muted: 150 20% 15%;
+    --muted-foreground: 145 12% 52%;
+
+    --accent: 165 50% 38%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 20% 17%;
+    --input: 150 20% 17%;
+    --ring: 152 58% 45%;
+
+    --gold-glow: 152 55% 50%;
+    --gold-dark: 155 35% 28%;
+    --gold-soft: 148 45% 42%;
+
+    --glass-subtle-bg: 150 30% 9% / 0.4;
+    --glass-subtle-border: 145 22% 20% / 0.3;
+    --glass-subtle-blur: 6px;
+
+    --glass-medium-bg: 150 30% 11% / 0.55;
+    --glass-medium-border: 145 22% 24% / 0.4;
+    --glass-medium-blur: 10px;
+
+    --glass-strong-bg: 150 30% 11% / 0.7;
+    --glass-strong-border: 145 22% 28% / 0.5;
+    --glass-strong-blur: 14px;
+
+    --glass-ultra-bg: 150 30% 13% / 0.85;
+    --glass-ultra-border: 145 22% 30% / 0.6;
+    --glass-ultra-blur: 16px;
+
+    --glass-inner-glow: 152 55% 48% / 0.06;
+    --glass-edge-glow: 152 55% 48% / 0.25;
+    --glass-outer-glow: 152 55% 48% / 0.2;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     THEME: ROSE — Warm Pink-Rose
+     ═══════════════════════════════════════════════════ */
+  .rose {
+    --background: 340 25% 6%;
+    --foreground: 335 18% 92%;
+
+    --card: 340 22% 9%;
+    --card-foreground: 335 18% 92%;
+
+    --popover: 340 22% 9%;
+    --popover-foreground: 335 18% 92%;
+
+    --primary: 345 62% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 340 18% 14%;
+    --secondary-foreground: 335 18% 92%;
+
+    --muted: 340 18% 16%;
+    --muted-foreground: 338 12% 55%;
+
+    --accent: 355 50% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 340 18% 18%;
+    --input: 340 18% 18%;
+    --ring: 345 62% 55%;
+
+    --gold-glow: 345 58% 58%;
+    --gold-dark: 340 35% 30%;
+    --gold-soft: 342 48% 48%;
+
+    --glass-subtle-bg: 340 25% 10% / 0.4;
+    --glass-subtle-border: 335 20% 22% / 0.3;
+    --glass-subtle-blur: 6px;
+
+    --glass-medium-bg: 340 25% 12% / 0.55;
+    --glass-medium-border: 335 20% 26% / 0.4;
+    --glass-medium-blur: 10px;
+
+    --glass-strong-bg: 340 25% 12% / 0.7;
+    --glass-strong-border: 335 20% 28% / 0.5;
+    --glass-strong-blur: 14px;
+
+    --glass-ultra-bg: 340 25% 14% / 0.85;
+    --glass-ultra-border: 335 20% 30% / 0.6;
+    --glass-ultra-blur: 16px;
+
+    --glass-inner-glow: 345 55% 55% / 0.06;
+    --glass-edge-glow: 345 55% 55% / 0.25;
+    --glass-outer-glow: 345 55% 55% / 0.2;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     THEME: SUNSET — Warm Amber/Orange
+     ═══════════════════════════════════════════════════ */
+  .sunset {
+    --background: 25 30% 5%;
+    --foreground: 30 22% 92%;
+
+    --card: 25 25% 8%;
+    --card-foreground: 30 22% 92%;
+
+    --popover: 25 25% 8%;
+    --popover-foreground: 30 22% 92%;
+
+    --primary: 28 82% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 25 20% 13%;
+    --secondary-foreground: 30 22% 92%;
+
+    --muted: 25 20% 15%;
+    --muted-foreground: 28 14% 52%;
+
+    --accent: 16 70% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 25 20% 17%;
+    --input: 25 20% 17%;
+    --ring: 28 82% 56%;
+
+    --gold-glow: 28 78% 58%;
+    --gold-dark: 22 40% 30%;
+    --gold-soft: 25 55% 45%;
+
+    --glass-subtle-bg: 25 30% 9% / 0.4;
+    --glass-subtle-border: 28 22% 20% / 0.3;
+    --glass-subtle-blur: 6px;
+
+    --glass-medium-bg: 25 30% 11% / 0.55;
+    --glass-medium-border: 28 22% 24% / 0.4;
+    --glass-medium-blur: 10px;
+
+    --glass-strong-bg: 25 30% 11% / 0.7;
+    --glass-strong-border: 28 22% 28% / 0.5;
+    --glass-strong-blur: 14px;
+
+    --glass-ultra-bg: 25 30% 13% / 0.85;
+    --glass-ultra-border: 28 22% 30% / 0.6;
+    --glass-ultra-blur: 16px;
+
+    --glass-inner-glow: 28 75% 55% / 0.06;
+    --glass-edge-glow: 28 75% 55% / 0.25;
+    --glass-outer-glow: 28 75% 55% / 0.2;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     THEME: LAVENDER — Soft Purple/Violet
+     ═══════════════════════════════════════════════════ */
+  .lavender {
+    --background: 260 25% 6%;
+    --foreground: 255 18% 92%;
+
+    --card: 260 22% 9%;
+    --card-foreground: 255 18% 92%;
+
+    --popover: 260 22% 9%;
+    --popover-foreground: 255 18% 92%;
+
+    --primary: 258 55% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 260 18% 14%;
+    --secondary-foreground: 255 18% 92%;
+
+    --muted: 260 18% 16%;
+    --muted-foreground: 258 12% 55%;
+
+    --accent: 275 45% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 260 18% 18%;
+    --input: 260 18% 18%;
+    --ring: 258 55% 65%;
+
+    --gold-glow: 258 50% 65%;
+    --gold-dark: 262 30% 32%;
+    --gold-soft: 256 42% 55%;
+
+    --glass-subtle-bg: 260 25% 10% / 0.4;
+    --glass-subtle-border: 258 20% 22% / 0.3;
+    --glass-subtle-blur: 6px;
+
+    --glass-medium-bg: 260 25% 12% / 0.55;
+    --glass-medium-border: 258 20% 26% / 0.4;
+    --glass-medium-blur: 10px;
+
+    --glass-strong-bg: 260 25% 12% / 0.7;
+    --glass-strong-border: 258 20% 28% / 0.5;
+    --glass-strong-blur: 14px;
+
+    --glass-ultra-bg: 260 25% 14% / 0.85;
+    --glass-ultra-border: 258 20% 30% / 0.6;
+    --glass-ultra-blur: 16px;
+
+    --glass-inner-glow: 258 50% 62% / 0.06;
+    --glass-edge-glow: 258 50% 62% / 0.25;
+    --glass-outer-glow: 258 50% 62% / 0.2;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     THEME: MIDNIGHT — Deep Navy/Indigo
+     ═══════════════════════════════════════════════════ */
+  .midnight {
+    --background: 228 40% 5%;
+    --foreground: 220 22% 92%;
+
+    --card: 228 35% 8%;
+    --card-foreground: 220 22% 92%;
+
+    --popover: 228 35% 8%;
+    --popover-foreground: 220 22% 92%;
+
+    --primary: 222 65% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 228 22% 13%;
+    --secondary-foreground: 220 22% 92%;
+
+    --muted: 228 22% 15%;
+    --muted-foreground: 224 14% 52%;
+
+    --accent: 235 50% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 228 22% 17%;
+    --input: 228 22% 17%;
+    --ring: 222 65% 58%;
+
+    --gold-glow: 222 60% 60%;
+    --gold-dark: 225 35% 30%;
+    --gold-soft: 220 50% 50%;
+
+    --glass-subtle-bg: 228 40% 9% / 0.4;
+    --glass-subtle-border: 224 25% 20% / 0.3;
+    --glass-subtle-blur: 6px;
+
+    --glass-medium-bg: 228 40% 11% / 0.55;
+    --glass-medium-border: 224 25% 24% / 0.4;
+    --glass-medium-blur: 10px;
+
+    --glass-strong-bg: 228 40% 11% / 0.7;
+    --glass-strong-border: 224 25% 28% / 0.5;
+    --glass-strong-blur: 14px;
+
+    --glass-ultra-bg: 228 40% 13% / 0.85;
+    --glass-ultra-border: 224 25% 30% / 0.6;
+    --glass-ultra-blur: 16px;
+
+    --glass-inner-glow: 222 58% 55% / 0.06;
+    --glass-edge-glow: 222 58% 55% / 0.25;
+    --glass-outer-glow: 222 58% 55% / 0.2;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     THEME: EMBER — Fiery Red/Orange
+     ═══════════════════════════════════════════════════ */
+  .ember {
+    --background: 8 30% 5%;
+    --foreground: 10 20% 92%;
+
+    --card: 8 25% 8%;
+    --card-foreground: 10 20% 92%;
+
+    --popover: 8 25% 8%;
+    --popover-foreground: 10 20% 92%;
+
+    --primary: 12 75% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 8 20% 13%;
+    --secondary-foreground: 10 20% 92%;
+
+    --muted: 8 20% 15%;
+    --muted-foreground: 10 12% 52%;
+
+    --accent: 0 65% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 8 20% 17%;
+    --input: 8 20% 17%;
+    --ring: 12 75% 50%;
+
+    --gold-glow: 12 70% 52%;
+    --gold-dark: 6 38% 28%;
+    --gold-soft: 10 55% 42%;
+
+    --glass-subtle-bg: 8 30% 9% / 0.4;
+    --glass-subtle-border: 10 22% 20% / 0.3;
+    --glass-subtle-blur: 6px;
+
+    --glass-medium-bg: 8 30% 11% / 0.55;
+    --glass-medium-border: 10 22% 24% / 0.4;
+    --glass-medium-blur: 10px;
+
+    --glass-strong-bg: 8 30% 11% / 0.7;
+    --glass-strong-border: 10 22% 28% / 0.5;
+    --glass-strong-blur: 14px;
+
+    --glass-ultra-bg: 8 30% 13% / 0.85;
+    --glass-ultra-border: 10 22% 30% / 0.6;
+    --glass-ultra-blur: 16px;
+
+    --glass-inner-glow: 12 68% 50% / 0.06;
+    --glass-edge-glow: 12 68% 50% / 0.25;
+    --glass-outer-glow: 12 68% 50% / 0.2;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     THEME: PEACH — Light, Warm Coral-Pink
+     ═══════════════════════════════════════════════════ */
+  .peach {
+    --background: 20 45% 96%;
+    --foreground: 15 30% 12%;
+
+    --card: 18 40% 94%;
+    --card-foreground: 15 30% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 15 30% 12%;
+
+    --primary: 12 72% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 18 35% 90%;
+    --secondary-foreground: 15 28% 22%;
+
+    --muted: 18 30% 87%;
+    --muted-foreground: 15 15% 42%;
+
+    --accent: 355 55% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 18 30% 84%;
+    --input: 18 30% 84%;
+    --ring: 12 72% 58%;
+
+    --gold-glow: 12 68% 60%;
+    --gold-dark: 8 40% 42%;
+    --gold-soft: 15 52% 52%;
+
+    --glass-subtle-bg: 0 0% 100% / 0.45;
+    --glass-subtle-border: 15 30% 88% / 0.5;
+    --glass-subtle-blur: 6px;
+
+    --glass-medium-bg: 0 0% 100% / 0.58;
+    --glass-medium-border: 15 30% 85% / 0.6;
+    --glass-medium-blur: 10px;
+
+    --glass-strong-bg: 0 0% 100% / 0.72;
+    --glass-strong-border: 15 28% 82% / 0.7;
+    --glass-strong-blur: 14px;
+
+    --glass-ultra-bg: 0 0% 100% / 0.88;
+    --glass-ultra-border: 15 25% 80% / 0.8;
+    --glass-ultra-blur: 16px;
+
+    --glass-inner-glow: 12 60% 58% / 0.08;
+    --glass-edge-glow: 12 60% 58% / 0.2;
+    --glass-outer-glow: 12 60% 58% / 0.15;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     THEME: SAGE — Light, Earthy Green
+     ═══════════════════════════════════════════════════ */
+  .sage {
+    --background: 140 20% 95%;
+    --foreground: 150 25% 12%;
+
+    --card: 138 18% 93%;
+    --card-foreground: 150 25% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 25% 12%;
+
+    --primary: 155 42% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 140 18% 89%;
+    --secondary-foreground: 150 22% 22%;
+
+    --muted: 140 15% 86%;
+    --muted-foreground: 145 12% 40%;
+
+    --accent: 170 35% 38%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 140 16% 82%;
+    --input: 140 16% 82%;
+    --ring: 155 42% 42%;
+
+    --gold-glow: 155 38% 48%;
+    --gold-dark: 160 28% 32%;
+    --gold-soft: 150 35% 40%;
+
+    --glass-subtle-bg: 0 0% 100% / 0.42;
+    --glass-subtle-border: 140 18% 88% / 0.5;
+    --glass-subtle-blur: 6px;
+
+    --glass-medium-bg: 0 0% 100% / 0.56;
+    --glass-medium-border: 140 18% 84% / 0.6;
+    --glass-medium-blur: 10px;
+
+    --glass-strong-bg: 0 0% 100% / 0.7;
+    --glass-strong-border: 140 16% 80% / 0.7;
+    --glass-strong-blur: 14px;
+
+    --glass-ultra-bg: 0 0% 100% / 0.86;
+    --glass-ultra-border: 140 14% 78% / 0.8;
+    --glass-ultra-blur: 16px;
+
+    --glass-inner-glow: 155 38% 44% / 0.08;
+    --glass-edge-glow: 155 38% 44% / 0.2;
+    --glass-outer-glow: 155 38% 44% / 0.15;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     THEME: SKY — Light, Airy Blue
+     ═══════════════════════════════════════════════════ */
+  .sky {
+    --background: 210 35% 97%;
+    --foreground: 215 30% 10%;
+
+    --card: 208 30% 95%;
+    --card-foreground: 215 30% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 30% 10%;
+
+    --primary: 205 75% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 28% 91%;
+    --secondary-foreground: 215 25% 20%;
+
+    --muted: 210 22% 88%;
+    --muted-foreground: 212 15% 42%;
+
+    --accent: 190 60% 42%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 22% 85%;
+    --input: 210 22% 85%;
+    --ring: 205 75% 52%;
+
+    --gold-glow: 205 68% 55%;
+    --gold-dark: 210 40% 38%;
+    --gold-soft: 200 55% 48%;
+
+    --glass-subtle-bg: 0 0% 100% / 0.42;
+    --glass-subtle-border: 210 25% 90% / 0.5;
+    --glass-subtle-blur: 6px;
+
+    --glass-medium-bg: 0 0% 100% / 0.56;
+    --glass-medium-border: 210 25% 86% / 0.6;
+    --glass-medium-blur: 10px;
+
+    --glass-strong-bg: 0 0% 100% / 0.72;
+    --glass-strong-border: 210 22% 82% / 0.7;
+    --glass-strong-blur: 14px;
+
+    --glass-ultra-bg: 0 0% 100% / 0.88;
+    --glass-ultra-border: 210 20% 80% / 0.8;
+    --glass-ultra-blur: 16px;
+
+    --glass-inner-glow: 205 65% 52% / 0.08;
+    --glass-edge-glow: 205 65% 52% / 0.2;
+    --glass-outer-glow: 205 65% 52% / 0.15;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     THEME: SAND — Light, Neutral Warm Beige
+     ═══════════════════════════════════════════════════ */
+  .sand {
+    --background: 38 28% 95%;
+    --foreground: 30 22% 12%;
+
+    --card: 36 25% 93%;
+    --card-foreground: 30 22% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 22% 12%;
+
+    --primary: 32 55% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 36 22% 89%;
+    --secondary-foreground: 30 20% 22%;
+
+    --muted: 36 18% 86%;
+    --muted-foreground: 34 12% 42%;
+
+    --accent: 22 48% 42%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 36 18% 82%;
+    --input: 36 18% 82%;
+    --ring: 32 55% 48%;
+
+    --gold-glow: 32 50% 52%;
+    --gold-dark: 28 35% 35%;
+    --gold-soft: 30 42% 44%;
+
+    --glass-subtle-bg: 0 0% 100% / 0.42;
+    --glass-subtle-border: 36 20% 88% / 0.5;
+    --glass-subtle-blur: 6px;
+
+    --glass-medium-bg: 0 0% 100% / 0.56;
+    --glass-medium-border: 36 20% 84% / 0.6;
+    --glass-medium-blur: 10px;
+
+    --glass-strong-bg: 0 0% 100% / 0.7;
+    --glass-strong-border: 36 18% 80% / 0.7;
+    --glass-strong-blur: 14px;
+
+    --glass-ultra-bg: 0 0% 100% / 0.86;
+    --glass-ultra-border: 36 16% 78% / 0.8;
+    --glass-ultra-blur: 16px;
+
+    --glass-inner-glow: 32 48% 48% / 0.08;
+    --glass-edge-glow: 32 48% 48% / 0.2;
+    --glass-outer-glow: 32 48% 48% / 0.15;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    overflow-x: hidden;
+    font-family: "Inter", sans-serif;
+  }
+}
+
+@layer utilities {
+  /* ═══════════════════════════════════════════════════
+     GLASS PANELS — 4 Intensity Levels (perf-optimized)
+     ═══════════════════════════════════════════════════ */
+
+  .glass-subtle {
+    background: hsl(var(--glass-subtle-bg));
+    backdrop-filter: blur(var(--glass-subtle-blur));
+    -webkit-backdrop-filter: blur(var(--glass-subtle-blur));
+    border: 1px solid hsl(var(--glass-subtle-border));
+  }
+
+  .glass-medium {
+    background: hsl(var(--glass-medium-bg));
+    backdrop-filter: blur(var(--glass-medium-blur));
+    -webkit-backdrop-filter: blur(var(--glass-medium-blur));
+    border: 1px solid hsl(var(--glass-medium-border));
+  }
+
+  .glass-strong {
+    background: hsl(var(--glass-strong-bg));
+    backdrop-filter: blur(var(--glass-strong-blur));
+    -webkit-backdrop-filter: blur(var(--glass-strong-blur));
+    border: 1px solid hsl(var(--glass-strong-border));
+  }
+
+  .glass-ultra {
+    background: hsl(var(--glass-ultra-bg));
+    backdrop-filter: blur(var(--glass-ultra-blur));
+    -webkit-backdrop-filter: blur(var(--glass-ultra-blur));
+    border: 1px solid hsl(var(--glass-ultra-border));
+  }
+
+  .glass {
+    @apply glass-medium;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     GLASS CARD — Gradient border
+     ═══════════════════════════════════════════════════ */
+
+  .glass-card {
+    @apply glass-strong;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glass-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary) / 0.3),
+      transparent 50%,
+      hsl(var(--accent) / 0.2)
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     TEXT EFFECTS
+     ═══════════════════════════════════════════════════ */
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .text-gradient-animated {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--primary)),
+      hsl(var(--gold-glow)),
+      hsl(var(--accent)),
+      hsl(var(--primary))
+    );
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 4s ease infinite;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     GLOW EFFECTS
+     ═══════════════════════════════════════════════════ */
+
+  .glow {
+    box-shadow:
+      0 0 20px hsl(var(--primary) / 0.3),
+      0 0 40px hsl(var(--primary) / 0.15);
+  }
+
+  .glow-sm {
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.25);
+  }
+
+  .glow-lg {
+    box-shadow:
+      0 0 30px hsl(var(--primary) / 0.4),
+      0 0 60px hsl(var(--primary) / 0.2);
+  }
+
+  .glass-inner-glow {
+    box-shadow:
+      inset 0 1px 1px hsl(var(--glass-inner-glow)),
+      inset 0 -1px 1px hsl(225 25% 0% / 0.05);
+  }
+
+  .glass-edge-glow {
+    box-shadow: 0 0 0 1px hsl(var(--glass-edge-glow));
+  }
+
+  /* ═══════════════════════════════════════════════════
+     GRADIENT BORDER BUTTON
+     ═══════════════════════════════════════════════════ */
+
+  .gradient-border {
+    position: relative;
+    background: hsl(var(--background));
+    z-index: 1;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: calc(var(--radius) + 2px);
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary)),
+      hsl(var(--accent)),
+      hsl(var(--gold-glow))
+    );
+    z-index: -1;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+
+  .gradient-border:hover::before {
+    opacity: 1;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     SHIMMER EFFECT
+     ═══════════════════════════════════════════════════ */
+
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--primary) / 0.1),
+      transparent
+    );
+    transform: translateX(-100%);
+    animation: shimmer 2s infinite;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     HOVER UTILITIES (lightweight)
+     ═══════════════════════════════════════════════════ */
+
+  .hover-lift {
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px -10px hsl(var(--primary) / 0.2);
+  }
+
+  /* ═══════════════════════════════════════════════════
+     SCROLL REVEAL
+     ═══════════════════════════════════════════════════ */
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Stagger delays */
+  .stagger-1 { transition-delay: 0.1s; }
+  .stagger-2 { transition-delay: 0.2s; }
+  .stagger-3 { transition-delay: 0.3s; }
+  .stagger-4 { transition-delay: 0.4s; }
+  .stagger-5 { transition-delay: 0.5s; }
+  .stagger-6 { transition-delay: 0.6s; }
+
+  /* ═══════════════════════════════════════════════════
+     FLOATING ANIMATIONS
+     ═══════════════════════════════════════════════════ */
+
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .float-slow {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .float-delayed {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: -3s;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     PULSE RING
+     ═══════════════════════════════════════════════════ */
+
+  .pulse-ring {
+    position: relative;
+  }
+
+  .pulse-ring::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: inherit;
+    border: 2px solid hsl(var(--primary) / 0.5);
+    animation: pulse-ring 2s ease-out infinite;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     BENTO GRID
+     ═══════════════════════════════════════════════════ */
+
+  .bento-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .bento-item-large {
+    grid-column: span 2;
+  }
+
+  @media (max-width: 768px) {
+    .bento-item-large {
+      grid-column: span 1;
+    }
+  }
+
+  /* ═══════════════════════════════════════════════════
+     PROGRESS RING
+     ═══════════════════════════════════════════════════ */
+
+  .progress-ring {
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+  }
+
+  .progress-ring circle {
+    transition: stroke-dashoffset 1s ease-in-out;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     CUSTOM SCROLLBAR
+     ═══════════════════════════════════════════════════ */
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 3px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.5);
+    border-radius: 3px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.7);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   KEYFRAME ANIMATIONS
+   ═══════════════════════════════════════════════════════ */
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(12px, -8px); }
+  50% { transform: translate(-6px, 10px); }
+  75% { transform: translate(8px, 6px); }
+}
+
+@keyframes drift-reverse {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-10px, 6px); }
+  50% { transform: translate(8px, -12px); }
+  75% { transform: translate(-6px, -4px); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.animate-drift { animation: drift 12s ease-in-out infinite; }
+.animate-drift-reverse { animation: drift-reverse 14s ease-in-out infinite; }
+.animate-blink { animation: blink 1s step-end infinite; }
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
+.animate-fade-in { animation: fade-in 0.6s ease-out forwards; }
+.animate-fade-in-up { animation: fade-in-up 0.6s ease-out forwards; }
+.animate-slide-in-left { animation: slide-in-left 0.6s ease-out forwards; }
+.animate-slide-in-right { animation: slide-in-right 0.6s ease-out forwards; }
+.animate-scale-in { animation: scale-in 0.4s ease-out forwards; }
+.animate-spin-slow { animation: spin-slow 20s linear infinite; }
+
+/* ═══════════════════════════════════════════════════════
+   REDUCED MOTION
+   ═══════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   MOBILE — Further reduce glass for performance
+   ═══════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  :root,
+  .dark,
+  .ocean,
+  .forest,
+  .rose,
+  .sunset,
+  .lavender,
+  .midnight,
+  .ember,
+  .peach,
+  .sage,
+  .sky,
+  .sand {
+    --glass-subtle-blur: 4px;
+    --glass-medium-blur: 6px;
+    --glass-strong-blur: 8px;
+    --glass-ultra-blur: 10px;
+  }
+}

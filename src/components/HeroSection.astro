@@ -1,0 +1,92 @@
+---
+import FloatingElements from './FloatingElements';
+import HeroInteractive from './HeroInteractive';
+---
+
+<section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Background gradient -->
+  <div class="absolute inset-0 bg-gradient-to-br from-background via-background to-gold-dark/10"></div>
+  <FloatingElements variant="hero" client:load />
+
+  <!-- Main Content -->
+  <div class="container relative z-10 px-4 py-12 pb-24 md:py-20 md:pb-20">
+    <div class="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+
+      <!-- Left Column -->
+      <div class="space-y-8 text-center lg:text-left">
+
+        <!-- Availability badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-medium text-sm mx-auto lg:mx-0 animate-fade-in">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span class="text-muted-foreground">Available for opportunities</span>
+        </div>
+
+        <!-- Name -->
+        <div class="space-y-2">
+          <p class="text-muted-foreground text-lg animate-fade-in" style="animation-delay: 0.1s">
+            Hello, I'm
+          </p>
+          <h1 class="text-4xl md:text-6xl lg:text-7xl font-display font-bold animate-fade-in" style="animation-delay: 0.2s">
+            <span class="text-gradient-animated">Luong Minh Hieu</span>
+          </h1>
+        </div>
+
+        <!-- Interactive parts: typewriter, CTA buttons, social links -->
+        <HeroInteractive client:load />
+      </div>
+
+      <!-- Right Column — Avatar showcase -->
+      <div class="hidden lg:flex items-center justify-center relative">
+        <div class="relative">
+          <!-- Ambient glow -->
+          <div class="absolute inset-0 -m-12 rounded-full bg-gradient-to-br from-primary/20 via-accent/15 to-primary/10 blur-3xl"></div>
+
+          <!-- Outer decorative rings -->
+          <div class="absolute inset-0 -m-6 rounded-full border border-primary/10"></div>
+          <div class="absolute inset-0 -m-12 rounded-full border border-primary/5"></div>
+
+          <!-- Gradient ring border -->
+          <div class="relative p-1 rounded-full bg-gradient-to-br from-primary via-accent to-primary">
+            <!-- Avatar container -->
+            <div class="relative w-72 h-72 xl:w-80 xl:h-80 rounded-full overflow-hidden bg-background">
+              <img
+                src="/hieulm-avatar.jpg"
+                alt="Luong Minh Hieu"
+                class="w-full h-full object-cover"
+                loading="eager"
+              />
+            </div>
+          </div>
+
+          <!-- Floating tech icons -->
+          <div class="absolute top-[15%] right-[15%] p-3 rounded-xl glass-medium animate-float" style="animation-delay: 0s">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          </div>
+          <div class="absolute bottom-[25%] right-[10%] p-3 rounded-xl glass-medium animate-float" style="animation-delay: 0.5s">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5V19A9 3 0 0 0 21 19V5"></path><path d="M3 12A9 3 0 0 0 21 12"></path></svg>
+          </div>
+          <div class="absolute top-[45%] right-[5%] p-3 rounded-xl glass-medium animate-float" style="animation-delay: 1s">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
+          </div>
+          <div class="absolute bottom-[15%] right-[20%] p-3 rounded-xl glass-medium animate-float" style="animation-delay: 1.5s">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" x2="20" y1="19" y2="19"></line></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex animate-fade-in" style="animation-delay: 1.2s">
+      <button
+        onclick="document.getElementById('skills')?.scrollIntoView({behavior:'smooth'})"
+        class="group flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+        aria-label="Scroll to skills"
+      >
+        <span class="text-xs uppercase tracking-wider">Scroll</span>
+        <div class="p-2 rounded-full glass-medium group-hover:border-primary/50 transition-colors animate-bounce">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg>
+        </div>
+      </button>
+    </div>
+  </div>
+</section>

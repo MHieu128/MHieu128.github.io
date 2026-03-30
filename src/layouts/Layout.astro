@@ -1,0 +1,76 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Luong Minh Hieu | Full-stack Developer",
+  description = "Full-stack Developer with 5+ years of experience specializing in .NET development, Agile/Scrum methodologies, and scalable software solutions.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Luong Minh Hieu" />
+    <meta name="keywords" content="Full-stack Developer, .NET Developer, C#, Software Engineer, Azure, SQL Server" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/hieulm-description.jpg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/hieulm-description.jpg" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={Astro.url.href} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Theme: Apply theme class before render to prevent FOUC -->
+    <script is:inline>
+      (function() {
+        var ALL_THEMES = ['light','peach','sage','sky','sand','dark','ocean','forest','rose','sunset','lavender','midnight','ember'];
+        var DARK_THEMES = ['dark','ocean','forest','rose','sunset','lavender','midnight','ember'];
+        var theme = localStorage.getItem('theme') || 'light';
+        // Remove any existing theme classes
+        ALL_THEMES.forEach(function(t) { document.documentElement.classList.remove(t); });
+        document.documentElement.classList.remove('dark');
+        // Apply the stored theme
+        if (theme === 'light' || theme === 'peach' || theme === 'sage' || theme === 'sky' || theme === 'sand') {
+          document.documentElement.classList.add(theme);
+        } else {
+          // Dark-based themes need the specific class
+          document.documentElement.classList.add(theme === 'dark' ? 'dark' : theme);
+          if (theme !== 'dark') {
+            // Non-default dark themes use their own class (no .dark needed, they define their own bg)
+          }
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
