@@ -6,7 +6,7 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
+# Install all dependencies (including dev)
 RUN npm ci
 
 # Copy source code
@@ -16,16 +16,25 @@ COPY . .
 RUN npm run build
 
 # Production stage
-FROM nginx:alpine AS production
+FROM node:20-alpine AS production
 
-# Copy custom nginx config
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+WORKDIR /app
 
-# Copy built static assets from builder stage
-COPY --from=builder /app/dist /usr/share/nginx/html
+# Copy built assets and server
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/server.js ./
+COPY --from=builder /app/package.json ./
 
-# Expose port 80 (internal - Traefik will route to this)
-EXPOSE 80
+# Install only express (production dep)
+RUN npm install --omit=dev express
 
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Env vars injected at runtime via Coolify / docker run -e
+ENV PORT=3000
+ENV TELEGRAM_BOT_TOKEN=""
+ENV TELEGRAM_CHAT_ID=""
+
+# Expose port (Traefik will route to this)
+EXPOSE 3000
+
+# Start Express server
+CMD ["node", "server.js"]

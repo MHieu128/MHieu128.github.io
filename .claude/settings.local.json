@@ -41,7 +41,9 @@
       "Bash(grep -c '\"\"glass \"\"' \"D:/NFSelfProjects/MHieu128.github.io/src/components/ContactSection.tsx\")",
       "Bash(grep -c '\"\"glass \"\"' \"D:/NFSelfProjects/MHieu128.github.io/src/components/SkillsSection.tsx\")",
       "Bash(grep -c '\"\"glass \"\"' \"D:/NFSelfProjects/MHieu128.github.io/src/components/AboutSection.tsx\")",
-      "Bash(head -20 echo \"---\" grep -n \"dark\\\\|light\\\\|theme\\\\|localStorage\\\\|defaultTheme\\\\|default\" \"D:/NFSelfProjects/MHieu128.github.io/src/hooks/useTheme.ts\")"
+      "Bash(head -20 echo \"---\" grep -n \"dark\\\\|light\\\\|theme\\\\|localStorage\\\\|defaultTheme\\\\|default\" \"D:/NFSelfProjects/MHieu128.github.io/src/hooks/useTheme.ts\")",
+      "Bash(/tmp/summary.txt:*)",
+      "Bash(ls:*)"
     ]
   }
 }
