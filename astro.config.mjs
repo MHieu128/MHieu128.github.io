@@ -1,13 +1,13 @@
-import { defineConfig } from 'astro/config';
-import react from '@astrojs/react';
-import tailwind from '@astrojs/tailwind';
-import sitemap from '@astrojs/sitemap';
+import { defineConfig } from "astro/config";
+import react from "@astrojs/react";
+import tailwind from "@astrojs/tailwind";
+import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: 'https://hieulm.dev',
-  output: 'static',
+  site: "https://hieulm.ddns.net",
+  output: "static",
   build: {
-    assets: '_astro',
+    assets: "_astro",
   },
   integrations: [
     react(),
@@ -19,14 +19,14 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        '@': '/src',
+        "@": "/src",
       },
     },
     build: {
       rollupOptions: {
         output: {
           manualChunks: {
-            'react-vendor': ['react', 'react-dom'],
+            "react-vendor": ["react", "react-dom"],
           },
         },
       },
