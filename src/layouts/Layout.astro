@@ -45,6 +45,29 @@ const {
       rel="stylesheet"
     />
 
+    <!-- JSON-LD Schema Markup -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Luong Minh Hieu",
+      "url": "https://hieulm.ddns.net",
+      "image": "https://hieulm.ddns.net/hieulm-description.jpg",
+      "jobTitle": "Full-stack Developer",
+      "description": description,
+      "knowsAbout": [".NET Core", "C#", "Azure", "SQL Server", "Vue.js", "React", "Docker", "CI/CD"],
+      "sameAs": [
+        "https://github.com/MHieu128",
+        "https://linkedin.com/in/hieulm128"
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": title,
+      "url": "https://hieulm.ddns.net",
+      "description": description
+    })} />
+
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" />
 
