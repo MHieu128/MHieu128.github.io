@@ -1,73 +1,186 @@
-# Welcome to your Lovable project
+# hieulm-portfolio
 
-## Project info
+Personal portfolio website of **Lương Minh Hiếu (MHieu128)** — built with Astro, React, and Tailwind CSS. Deployed as a static site via Docker and Coolify.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+---
 
-## How can I edit this code?
+## ✨ Features
 
-There are several ways of editing your application.
+- **Astro Islands Architecture** — zero JS shipped for static sections, React hydrated only where needed
+- **13-Theme Color System** — swatch picker persisted in `localStorage`, no flash of unstyled content (FOUC)
+- **Glassmorphism UI** — layered glass-medium / glass-subtle utilities with backdrop blur
+- **Typewriter Hero** — animated text powered by a lightweight React island
+- **Skills, Experience, About, Contact** — all sections lazy-hydrate on scroll (`client:visible`)
+- **Static Site Generation** — fully pre-rendered HTML, SEO-friendly, no client-side routing
+- **Auto Sitemap** — `@astrojs/sitemap` generates `sitemap-0.xml` at build time
+- **Contact Form** — toast notifications via Sonner
+- **Docker + Coolify** — production-ready multi-stage Docker image behind Traefik
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## 🛠️ Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+| Layer | Technology |
+|---|---|
+| Framework | [Astro 5](https://astro.build) |
+| UI Islands | [React 18](https://react.dev) |
+| Styling | [Tailwind CSS 3](https://tailwindcss.com) |
+| Components | [shadcn/ui](https://ui.shadcn.com) + [Radix UI](https://radix-ui.com) |
+| Icons | [Lucide React](https://lucide.dev) |
+| Fonts | Outfit (display) + Inter (body) via Google Fonts |
+| Build | Astro static output (`output: static`) |
+| Production | Docker (nginx:alpine) + Coolify (Traefik) |
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🚀 Getting Started
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Prerequisites
 
-Follow these steps:
+- **Node.js** ≥ 18 — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **npm** ≥ 9
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Local Development
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+```bash
+# 1. Clone the repository
+git clone https://github.com/MHieu128/MHieu128.github.io.git
+cd MHieu128.github.io
 
-# Step 3: Install the necessary dependencies.
-npm i
+# 2. Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 3. Start the dev server (http://localhost:4321)
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Production Build
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+# Build static files into dist/
+npm run build
 
-**Use GitHub Codespaces**
+# Preview the production build locally
+npm run preview
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## 🏗️ Project Structure
 
-This project is built with:
+```
+MHieu128.github.io/
+├── public/                   # Static assets (images, CV, favicon)
+│   ├── hieulm-avatar.jpg
+│   ├── hieulm-description.jpg
+│   └── Minh-Hieu-Luong-CV.pdf
+├── src/
+│   ├── components/           # Astro + React components
+│   │   ├── HeroSection.astro       # Static hero shell
+│   │   ├── HeroInteractive.tsx     # Typewriter + CTA buttons [client:load]
+│   │   ├── Navigation.tsx          # Sticky nav + ThemeSwitcher [client:load]
+│   │   ├── FloatingElements.tsx    # CSS-only drifting orbs [client:load]
+│   │   ├── SkillsSection.tsx       # Skills grid [client:visible]
+│   │   ├── ExperienceSection.tsx   # Timeline [client:visible]
+│   │   ├── AboutSection.tsx        # About me [client:visible]
+│   │   ├── ContactSection.tsx      # Contact form [client:visible]
+│   │   ├── ThemeSwitcher.tsx       # 13-theme swatch picker
+│   │   ├── AnimatedText.tsx        # TypewriterText + AnimatedCounter
+│   │   ├── Footer.astro            # Static footer
+│   │   └── ui/                     # shadcn/ui primitives
+│   ├── hooks/                # Custom React hooks
+│   │   ├── useTheme.ts             # localStorage theme management
+│   │   ├── useScrollAnimation.ts   # Intersection Observer scroll reveals
+│   │   └── use-toast.ts            # Toast state hook
+│   ├── layouts/
+│   │   └── Layout.astro      # Root layout: meta, OG tags, fonts, theme script
+│   ├── lib/
+│   │   └── utils.ts          # clsx + tailwind-merge helper
+│   ├── pages/
+│   │   ├── index.astro       # Home page — composes all sections
+│   │   └── 404.astro         # Static 404 page
+│   └── styles/
+│       └── global.css        # CSS variables, theme selectors, glass utilities
+├── Dockerfile                # Multi-stage: node:20-alpine → nginx:alpine
+├── docker-compose.yml        # Coolify-ready (no port exposure, Traefik routes)
+├── nginx.conf                # Static file serving + 404 + _astro/ cache headers
+├── astro.config.mjs          # Astro config: react, tailwind, sitemap integrations
+├── tailwind.config.ts        # Custom palette (gold), Outfit font, drift animations
+└── tsconfig.json             # Extends astro/tsconfigs/strict, @/* alias
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## 🎨 Theme System
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+The site ships with **13 color themes** selectable via the swatch picker in the navigation bar:
 
-## Can I connect a custom domain to my Lovable project?
+| Theme | Primary |
+|---|---|
+| `default` | Teal |
+| `ocean` | Deep Blue |
+| `forest` | Green |
+| `rose` | Rose / Pink |
+| `sunset` | Amber / Orange |
+| `lavender` | Purple |
+| `midnight` | Navy |
+| `ember` | Red / Orange |
+| `peach` | Warm Peach |
+| `sage` | Sage Green |
+| `sky` | Sky Blue |
+| `sand` | Warm Sand / Tan |
 
-Yes, you can!
+Theme choice is stored in `localStorage` and applied as a CSS class on `<html>` via an inline script in `Layout.astro` — no FOUC.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 🐳 Docker
+
+### Build & Run Locally
+
+```bash
+# Build the Docker image
+docker build -t hieu-portfolio .
+
+# Run on port 3000
+docker run --rm -p 3000:80 hieu-portfolio
+
+# Visit http://localhost:3000
+```
+
+### docker-compose (for Coolify)
+
+```bash
+# No port mapping — Traefik handles external routing automatically
+docker compose up -d
+```
+
+---
+
+## ☁️ Deploy to Coolify
+
+1. Push your changes to the Git repository
+2. In Coolify: **New Resource → Docker Compose** (or **Dockerfile**)
+3. Set your domain in Coolify's UI — Traefik labels are auto-generated
+4. Enable **SSL/TLS** in the Coolify dashboard
+5. Click **Deploy** — Coolify builds the Docker image and routes traffic to port 80
+
+> The `docker-compose.yml` intentionally omits `ports:` — Coolify's Traefik reverse proxy handles all external routing.
+
+---
+
+## 📁 Required Assets
+
+Make sure these files exist in `public/` before building:
+
+| File | Purpose |
+|---|---|
+| `public/hieulm-avatar.jpg` | Avatar photo in the Hero section |
+| `public/hieulm-description.jpg` | OG / description image |
+| `public/Minh-Hieu-Luong-CV.pdf` | CV download linked from the Hero CTA |
+
+---
+
+## 📄 License
+
+This project is personal and not licensed for redistribution. All content and design are © Lương Minh Hiếu.
