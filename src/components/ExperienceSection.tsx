@@ -254,7 +254,19 @@ const experiences = [
 ];
 
 export default function ExperienceSection() {
-  const [expandedId, setExpandedId] = useState<string | null>("ipms");
+  // All entries open by default; each card can be collapsed independently.
+  const [expandedIds, setExpandedIds] = useState<Set<string>>(
+    () => new Set(experiences.map((e) => e.id)),
+  );
+  const isExpanded = (id: string) => expandedIds.has(id);
+  const toggle = (id: string) =>
+    setExpandedIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+
   const { ref: sectionRef, isVisible } = useScrollAnimation({
     threshold: 0.05,
   });
@@ -309,7 +321,7 @@ export default function ExperienceSection() {
                 <div
                   className={cn(
                     "absolute left-[18px] md:left-1/2 w-4 h-4 rounded-full border-4 border-background -translate-x-1/2 mt-8 z-10 transition-all duration-300",
-                    expandedId === exp.id
+                    isExpanded(exp.id)
                       ? "bg-primary scale-125 shadow-lg shadow-primary/50"
                       : "bg-muted hover:bg-primary/50",
                   )}
@@ -323,17 +335,16 @@ export default function ExperienceSection() {
                   )}
                 >
                   <GlassCard
-                    variant={expandedId === exp.id ? "prominent" : "subtle"}
+                    variant={isExpanded(exp.id) ? "prominent" : "subtle"}
                     hover={true}
                     className={cn(
                       "overflow-hidden transition-all duration-300",
-                      expandedId === exp.id && "shadow-xl shadow-primary/10",
+                      isExpanded(exp.id) && "shadow-xl shadow-primary/10",
                     )}
                   >
                     <button
-                      onClick={() =>
-                        setExpandedId(expandedId === exp.id ? null : exp.id)
-                      }
+                      onClick={() => toggle(exp.id)}
+                      aria-expanded={isExpanded(exp.id)}
                       className="w-full p-6 text-left"
                     >
                       <div className="flex items-start justify-between gap-4">
@@ -374,7 +385,7 @@ export default function ExperienceSection() {
 
                         {/* Expand Icon */}
                         <div className="flex-shrink-0 p-2 rounded-full bg-secondary/50">
-                          {expandedId === exp.id ? (
+                          {isExpanded(exp.id) ? (
                             <ChevronUp className="h-4 w-4 text-primary" />
                           ) : (
                             <ChevronDown className="h-4 w-4 text-muted-foreground" />
@@ -383,15 +394,16 @@ export default function ExperienceSection() {
                       </div>
                     </button>
 
-                    {/* Expanded content */}
+                    {/* Expanded content — grid-rows animation so tall cards are never clipped */}
                     <div
                       className={cn(
-                        "overflow-hidden transition-all duration-300",
-                        expandedId === exp.id
-                          ? "max-h-[800px] opacity-100"
-                          : "max-h-0 opacity-0",
+                        "grid transition-all duration-300 ease-out",
+                        isExpanded(exp.id)
+                          ? "grid-rows-[1fr] opacity-100"
+                          : "grid-rows-[0fr] opacity-0",
                       )}
                     >
+                      <div className="overflow-hidden">
                       <div className="px-6 pb-6 border-t border-border/50 pt-4">
                         <p className="text-muted-foreground mb-4">
                           {exp.description}
@@ -425,6 +437,7 @@ export default function ExperienceSection() {
                             </Badge>
                           ))}
                         </div>
+                      </div>
                       </div>
                     </div>
                   </GlassCard>
