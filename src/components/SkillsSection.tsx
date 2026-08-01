@@ -23,21 +23,30 @@ const skillCategories = [
       { name: "C#", level: 95, core: true },
       { name: "JavaScript", level: 85, core: true },
       { name: "TypeScript", level: 80 },
-      { name: "Python", level: 70 },
+      { name: "Python", level: 75 },
     ],
   },
   {
     id: "frameworks",
-    title: "Frameworks & Runtime",
+    title: "Frameworks & Engines",
     icon: Layers,
     skills: [
-      { name: ".NET Core", level: 95, core: true },
-      { name: ".NET Framework", level: 90, core: true },
+      { name: ".NET Core / Framework", level: 95, core: true },
       { name: "Entity Framework", level: 90, core: true },
-      { name: "Vue.js", level: 75 },
-      { name: "Angular", level: 70 },
-      { name: "Flask", level: 65 },
-      { name: "Xamarin", level: 70 },
+      { name: "React", level: 80 },
+      { name: "Next.js", level: 75 },
+      { name: "Flask / FastAPI", level: 72 },
+      { name: "Docker", level: 75 },
+    ],
+  },
+  {
+    id: "working",
+    title: "Working Knowledge",
+    icon: Layers,
+    skills: [
+      { name: "Angular", level: 65 },
+      { name: "Vue.js", level: 68 },
+      { name: "Xamarin", level: 60 },
     ],
   },
   {
@@ -48,6 +57,8 @@ const skillCategories = [
       { name: "jQuery", level: 85 },
       { name: "Bootstrap", level: 85 },
       { name: "DevExtreme", level: 80 },
+      { name: "Redux / NgRx", level: 75 },
+      { name: "React Flow", level: 75 },
     ],
   },
   {
@@ -57,6 +68,7 @@ const skillCategories = [
     skills: [
       { name: "SQL Server", level: 90, core: true },
       { name: "MySQL", level: 80 },
+      { name: "PostgreSQL", level: 78 },
       { name: "Redis", level: 75 },
     ],
   },
@@ -65,10 +77,13 @@ const skillCategories = [
     title: "Cloud & DevOps",
     icon: Cloud,
     skills: [
-      { name: "Azure", level: 85 },
+      { name: "Azure", level: 85, core: true },
+      { name: "Azure Functions", level: 82 },
       { name: "Azure Data Factory", level: 80 },
-      { name: "Docker", level: 75 },
+      { name: "Azure Kubernetes Service", level: 72 },
+      { name: "Azure DevOps", level: 82 },
       { name: "CI/CD Pipelines", level: 85 },
+      { name: "AWS → Azure Migration", level: 78 },
     ],
   },
   {
@@ -89,6 +104,8 @@ const skillCategories = [
     skills: [
       { name: "GitHub Copilot", level: 90 },
       { name: "AI-Assisted Dev", level: 85 },
+      { name: "Applied ML (logistic regression)", level: 70 },
+      { name: "Model Evaluation (AUC/precision)", level: 68 },
     ],
   },
   {
@@ -103,7 +120,7 @@ const skillCategories = [
   },
 ];
 
-const coreSkills = ["C#", ".NET Core/Framework", "Entity Framework", "SQL Server", "JavaScript"];
+const coreSkills = ["C#", ".NET Core/Framework", "Azure", "Python", "TypeScript", "SQL Server"];
 
 function AnimatedProgressBar({ level, isVisible }: { level: number; isVisible: boolean }) {
   return (
@@ -139,8 +156,8 @@ export default function SkillsSection() {
             Technical <span className="text-gradient">Skills</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive toolkit built over 5+ years of professional development,
-            with deep expertise in the .NET ecosystem and modern web technologies.
+            A toolkit built over 6 years of professional development — the .NET ecosystem,
+            Python, modern web technologies, and a growing focus on Azure cloud engineering.
           </p>
         </div>
 

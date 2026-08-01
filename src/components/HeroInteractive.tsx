@@ -3,8 +3,9 @@ import { TypewriterText } from "@/components/AnimatedText";
 import { Github, Linkedin, Mail, Download } from "lucide-react";
 
 const roles = [
-  "Full-stack Developer",
+  "Full-stack Software Engineer",
   ".NET Developer",
+  "Azure Cloud Engineer",
   "Data Engineer",
   "AI-Enhanced Developer",
 ];
@@ -36,12 +37,13 @@ export default function HeroInteractive() {
         className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 animate-fade-in"
         style={{ animationDelay: "0.4s" }}
       >
-        5+ years building scalable enterprise solutions with{" "}
-        <span className="text-primary font-medium">.NET</span> and modern web
-        technologies. Passionate about clean code, Agile methodologies, and
-        leveraging{" "}
-        <span className="text-primary font-medium">AI tools</span> to boost
-        productivity.
+        6 years delivering and modernizing enterprise applications in{" "}
+        <span className="text-primary font-medium">.NET</span>,{" "}
+        <span className="text-primary font-medium">Python</span> and{" "}
+        <span className="text-primary font-medium">TypeScript</span>, now
+        focused on <span className="text-primary font-medium">Azure</span> cloud
+        engineering — AKS, Functions, Data Factory and CI/CD. I own features end
+        to end and design for auditability and safe failure.
       </p>
 
       {/* CTA Buttons */}

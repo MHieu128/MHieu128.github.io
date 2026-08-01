@@ -4,7 +4,7 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://hieulm.ddns.net",
+  site: "https://hieulm.codeandcafe.com",
   output: "static",
   build: {
     assets: "_astro",

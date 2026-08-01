@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://hieulm.ddns.net/sitemap-index.xml
+Sitemap: https://hieulm.codeandcafe.com/sitemap-index.xml

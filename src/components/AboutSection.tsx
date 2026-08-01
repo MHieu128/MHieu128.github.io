@@ -115,9 +115,9 @@ export default function AboutSection() {
               <div className="flex-1">
                 <h3 className="text-xl font-semibold mb-2">Education</h3>
                 <h4 className="text-lg font-medium text-foreground mb-1">
-                  Bachelor's in Software Engineering
+                  Bachelor of Software Engineering
                 </h4>
-                <p className="text-primary font-medium mb-2">Duy Tan University</p>
+                <p className="text-primary font-medium mb-2">Duy Tan University · 2020</p>
                 <p className="text-sm text-muted-foreground">
                   Comprehensive education in software development principles,
                   algorithms, data structures, and modern development practices.
@@ -135,7 +135,7 @@ export default function AboutSection() {
             style={{ animationDelay: "0.3s" }}
           >
             <div className="text-5xl font-bold text-gradient mb-2">
-              {isVisible ? <AnimatedCounter end={5} suffix="+" /> : "0+"}
+              {isVisible ? <AnimatedCounter end={6} suffix="" /> : "0"}
             </div>
             <p className="text-muted-foreground text-sm">Years Experience</p>
           </GlassCard>
@@ -149,7 +149,7 @@ export default function AboutSection() {
             style={{ animationDelay: "0.35s" }}
           >
             <div className="text-5xl font-bold text-gradient mb-2">
-              {isVisible ? <AnimatedCounter end={5} suffix="+" /> : "0+"}
+              {isVisible ? <AnimatedCounter end={7} suffix="" /> : "0"}
             </div>
             <p className="text-muted-foreground text-sm">Major Projects</p>
           </GlassCard>
