@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Minh Hieu Luong - CV Profile</title>
+<style>
+  @page { size: A4; margin: 16mm 17mm 16mm 17mm; }
+
+  * { box-sizing: border-box; }
+
+  html { background: #9a9a9a; }
+
+  body {
+    margin: 0;
+    font-family: Calibri, "Carlito", "Segoe UI", Arial, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.3;
+    color: #000;
+  }
+
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 16mm 17mm;
+    margin: 10mm auto;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,.35);
+  }
+
+  h1.name {
+    font-size: 22pt;
+    font-weight: bold;
+    letter-spacing: .6pt;
+    text-align: center;
+    margin: 0 0 2pt;
+  }
+  p.tagline {
+    text-align: center;
+    font-size: 11pt;
+    color: #333;
+    margin: 0 0 14pt;
+  }
+
+  h2.sec {
+    font-size: 12pt;
+    font-weight: bold;
+    letter-spacing: .5pt;
+    text-transform: uppercase;
+    border-bottom: 1pt solid #000;
+    margin: 15pt 0 7pt;
+    padding-bottom: 2pt;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  table.hdr { width: 100%; border-collapse: collapse; }
+  table.hdr > tbody > tr > td { border: 0; padding: 0; vertical-align: top; }
+  table.info { border-collapse: collapse; }
+  table.info td { border: 0; padding: 0 0 3pt; vertical-align: top; }
+  td.lbl { width: 92pt; font-weight: bold; }
+  img.photo { border: .5pt solid #999; display: block; margin-left: auto; }
+
+  ul { margin: 0 0 0 15pt; padding: 0; }
+  li { margin: 0 0 3pt; }
+  ul.sub { margin: 2pt 0 0 15pt; }
+
+  div.job { margin: 0 0 9pt; break-inside: avoid; page-break-inside: avoid; }
+  p.jobline { margin: 0 0 2pt; }
+  .jobrole { font-weight: bold; }
+  .jobmeta { color: #333; }
+
+  table.proj {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin: 0 0 11pt;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  table.proj td {
+    border: .5pt solid #7f7f7f;
+    padding: 3.5pt 5pt;
+    vertical-align: top;
+  }
+  table.proj td.k { width: 27%; background: #d9d9d9; font-weight: bold; }
+  table.proj tr.top td { background: #bfbfbf; font-weight: bold; font-size: 11pt; }
+
+  @media print {
+    html { background: #fff; }
+    .sheet { width: auto; min-height: 0; margin: 0; padding: 0; box-shadow: none; }
+    .noprint { display: none !important; }
+  }
+
+  .noprint {
+    max-width: 210mm;
+    margin: 10mm auto 0;
+    padding: 10px 14px;
+    background: #fffbe6;
+    border: 1px solid #e0cf7a;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+  }
+</style>
+</head>
+<body>
+
+<div class="noprint">
+  <b>Xuất PDF:</b> Ctrl+P (Cmd+P) → Destination = <b>Save as PDF</b> → Paper = <b>A4</b> → Margins = <b>Default</b> → bỏ tick <b>Headers and footers</b> → Save. Khung vàng này không in ra.
+</div>
+
+<div class="sheet">
+
+  <h1 class="name">MINH HIEU LUONG</h1>
+  <p class="tagline">Full-stack Developer &nbsp;|&nbsp; Azure Cloud Engineer</p>
+
+  <h2 class="sec">Personal details</h2>
+  <table class="hdr">
+    <tr>
+      <td style="width:76%; padding-right:12pt;">
+        <table class="info">
+          <tr><td class="lbl">Full name</td><td>Minh Hieu Luong</td></tr>
+          <tr><td class="lbl">Designation</td><td>Full-stack Developer / Azure Cloud Engineer</td></tr>
+          <tr><td class="lbl">Date of birth</td><td>12 August 1998</td></tr>
+          <tr><td class="lbl">Email</td><td>minhhieudn98@gmail.com</td></tr>
+          <tr><td class="lbl">Phone</td><td>(+84) 399 870 055</td></tr>
+          <tr><td class="lbl">Address</td><td>H15/03 K408 Hoang Dieu, Binh Thuan Ward, Hai Chau District, Da Nang City, Vietnam</td></tr>
+          <tr><td class="lbl">Website</td><td>hieulm.codeandcafe.com</td></tr>
+          <tr><td class="lbl">LinkedIn</td><td>linkedin.com/in/minhhieudn98</td></tr>
+        </table>
+      </td>
+      <td style="width:24%;">
+        <img class="photo" src="hieulm-avatar.jpg" width="128" height="160" alt="Minh Hieu Luong">
+      </td>
+    </tr>
+  </table>
+
+  <h2 class="sec">Profile</h2>
+  <ul>
+    <li>6 years of experience in software development, focused on full-stack web, .NET and Azure cloud engineering.</li>
+    <li><b>Languages and frameworks:</b> C#, ASP.NET, ASP.NET MVC, ASP.NET Web API, ASP.NET Core, .NET 8/10, JavaScript, TypeScript, Python, HTML, CSS, jQuery, AJAX.</li>
+    <li><b>Front-end and libraries:</b> React, Next.js, Vue.js, Angular, Flask, FastAPI, Entity Framework, DevExtreme, Redux, NgRx, Xamarin, Docker.</li>
+    <li><b>Databases:</b> MS SQL Server, PostgreSQL, MySQL, Redis, LINQ.</li>
+    <li><b>Azure:</b> Kubernetes Service (AKS), Functions, Data Factory, DevOps and CI/CD pipelines. Migrated production workloads from AWS to Azure.</li>
+    <li><b>Applied machine learning:</b> logistic regression, feature weighting, model evaluation (AUC, precision, recall).</li>
+  </ul>
+
+  <h2 class="sec">Personal qualification</h2>
+  <ul>
+    <li>Take ownership of features from design through delivery.</li>
+    <li>Strong interest in research, programming and system design.</li>
+    <li>Work effectively both in a team and independently.</li>
+    <li>Good at problem-solving and production troubleshooting.</li>
+    <li>Able to communicate and work directly with US and Japanese clients in English.</li>
+    <li>Willing to learn and adopt new technologies.</li>
+    <li>Hard-working with a high sense of responsibility.</li>
+  </ul>
+
+  <h2 class="sec">Education</h2>
+  <ul>
+    <li><b>Duy Tan University</b>, Da Nang, Vietnam &ndash; Bachelor of Software Engineering, 2020.</li>
+  </ul>
+
+  <h2 class="sec">Career summary</h2>
+
+  <div class="job">
+    <p class="jobline"><span class="jobrole">Full-stack AI Software Engineer</span> &nbsp;&middot;&nbsp; <span class="jobmeta">Hypertek (secondment from FPT Software) &nbsp;&middot;&nbsp; 04/2026 &ndash; 07/2026</span></p>
+    <ul class="sub">
+      <li><b>Programming:</b> Python, FastAPI, NumPy, TypeScript, React, Next.js, React Flow</li>
+      <li><b>Cloud:</b> Azure Kubernetes Service (AKS), Docker, GitLab CI</li>
+      <li><b>Database:</b> PostgreSQL</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <p class="jobline"><span class="jobrole">.NET Developer / Full-stack Developer</span> &nbsp;&middot;&nbsp; <span class="jobmeta">FPT Software, Da Nang &nbsp;&middot;&nbsp; 04/2021 &ndash; Present</span></p>
+    <ul class="sub">
+      <li><b>Programming:</b> C#, ASP.NET MVC, .NET Core, .NET 8 API, .NET 10 MVC, JavaScript, TypeScript, Python, Vue.js, Angular, DevExtreme</li>
+      <li><b>Cloud:</b> Azure Data Factory, Azure Functions, Azure DevOps, CI/CD pipelines, AWS to Azure migration</li>
+      <li><b>Database:</b> MS SQL Server, LINQ</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <p class="jobline"><span class="jobrole">Developer</span> &nbsp;&middot;&nbsp; <span class="jobmeta">Ugotechs, Da Nang &nbsp;&middot;&nbsp; 06/2020 &ndash; 03/2021</span></p>
+    <ul class="sub">
+      <li><b>Programming:</b> C#, Xamarin.Android, .NET Framework 4.8, ASP.NET MVC</li>
+      <li><b>Database:</b> MS SQL Server</li>
+    </ul>
+  </div>
+
+  <h2 class="sec">Projects</h2>
+
+  <table class="proj">
+    <tr class="top"><td class="k">Project</td><td>IPMS &ndash; Intellectual Property Management System</td></tr>
+    <tr><td class="k">Company</td><td>Hypertek</td></tr>
+    <tr><td class="k">Position</td><td>AI Software Engineer</td></tr>
+    <tr><td class="k">Team size</td><td>8</td></tr>
+    <tr><td class="k">Duration</td><td>4 months</td></tr>
+    <tr><td class="k">Description</td><td>An enterprise platform for managing the intellectual property lifecycle: trademarks, patents, industrial designs and geographical indications. Covers registration and approval workflows, document management, fee calculation, domain-name management, and automated crawling of external registries such as WIPO.</td></tr>
+    <tr><td class="k">Technology</td><td>Python, FastAPI, NumPy, TypeScript, React, Next.js, React Flow, PostgreSQL (pg_trgm, materialized views), Docker, Azure Kubernetes Service (AKS), GitLab CI, Jira</td></tr>
+  </table>
+
+  <table class="proj">
+    <tr class="top"><td class="k">Project</td><td>Legacy Insurance System Modernization &ndash; Japan (NDA)</td></tr>
+    <tr><td class="k">Company</td><td>FPT Software</td></tr>
+    <tr><td class="k">Client</td><td>Japan</td></tr>
+    <tr><td class="k">Position</td><td>Software Engineer</td></tr>
+    <tr><td class="k">Team size</td><td>180</td></tr>
+    <tr><td class="k">Duration</td><td>4 months</td></tr>
+    <tr><td class="k">Description</td><td>Modernization of a legacy system for a Japanese agricultural and livestock insurance business. Migrated business applications from Microsoft Access to a centralized .NET monolithic architecture.</td></tr>
+    <tr><td class="k">Technology</td><td>C#, .NET 10 MVC, SQL Server (SSMS), Visual Studio 2022, GitLab, TortoiseSVN</td></tr>
+  </table>
+
+  <table class="proj">
+    <tr class="top"><td class="k">Project</td><td>Healthcare Patient-Outreach Platform &ndash; U.S. (NDA)</td></tr>
+    <tr><td class="k">Company</td><td>FPT Software</td></tr>
+    <tr><td class="k">Client</td><td>United States</td></tr>
+    <tr><td class="k">Position</td><td>Software Engineer &amp; Data Engineer</td></tr>
+    <tr><td class="k">Team size</td><td>10</td></tr>
+    <tr><td class="k">Duration</td><td>6 months</td></tr>
+    <tr><td class="k">Description</td><td>A healthcare platform that automates patient outreach, manages care data and supports day-to-day operational workflows.</td></tr>
+    <tr><td class="k">Technology</td><td>C#, TypeScript, .NET Core, Angular, Azure Data Factory, Azure Functions, Azure Cloud Services, SSMS, Visual Studio 2022, Azure Repos</td></tr>
+  </table>
+
+  <table class="proj">
+    <tr class="top"><td class="k">Project</td><td>US Real-Estate Document Notarization (NDA)</td></tr>
+    <tr><td class="k">Company</td><td>FPT Software</td></tr>
+    <tr><td class="k">Client</td><td>United States</td></tr>
+    <tr><td class="k">Position</td><td>Software Engineer</td></tr>
+    <tr><td class="k">Team size</td><td>47</td></tr>
+    <tr><td class="k">Duration</td><td>3.5 years</td></tr>
+    <tr><td class="k">Description</td><td>A platform for the notarization of US real-estate documents, handling high-volume transactions.</td></tr>
+    <tr><td class="k">Technology</td><td>C#, JavaScript, .NET Framework MVC, .NET 8 API, Vue.js, DevExtreme, Azure Cloud, Visual Studio 2022, GitLab</td></tr>
+  </table>
+
+  <table class="proj">
+    <tr class="top"><td class="k">Project</td><td>B2B Microservices Data &amp; Operations Application (NDA)</td></tr>
+    <tr><td class="k">Company</td><td>FPT Software</td></tr>
+    <tr><td class="k">Position</td><td>Software Engineer</td></tr>
+    <tr><td class="k">Team size</td><td>13</td></tr>
+    <tr><td class="k">Duration</td><td>10 months</td></tr>
+    <tr><td class="k">Description</td><td>A microservices application offered to third parties, providing tools to collect company data and manage internal business operations.</td></tr>
+    <tr><td class="k">Technology</td><td>Python, Flask, RESTful API, Microservices, Docker, PayPal REST APIs, SSMS, Visual Studio 2019, GitLab</td></tr>
+  </table>
+
+  <table class="proj">
+    <tr class="top"><td class="k">Project</td><td>Company Branch &amp; Organization Management (Internal)</td></tr>
+    <tr><td class="k">Company</td><td>Ugotechs</td></tr>
+    <tr><td class="k">Position</td><td>Software Engineer</td></tr>
+    <tr><td class="k">Team size</td><td>3</td></tr>
+    <tr><td class="k">Duration</td><td>3 months</td></tr>
+    <tr><td class="k">Description</td><td>An internal system for managing company branches and organizational structure.</td></tr>
+    <tr><td class="k">Technology</td><td>C#, .NET Framework MVC, SQL Server (SSMS), Visual Studio 2019, GitLab, Windows Server</td></tr>
+  </table>
+
+  <table class="proj">
+    <tr class="top"><td class="k">Project</td><td>COVID-19 Notification &amp; Information App (NDA)</td></tr>
+    <tr><td class="k">Company</td><td>Ugotechs</td></tr>
+    <tr><td class="k">Position</td><td>Software Engineer</td></tr>
+    <tr><td class="k">Team size</td><td>10</td></tr>
+    <tr><td class="k">Duration</td><td>8 months</td></tr>
+    <tr><td class="k">Description</td><td>A mobile application to notify users exposed to COVID-19 and share COVID-related information.</td></tr>
+    <tr><td class="k">Technology</td><td>C#, Xamarin.Android, .NET Framework 4.8, SSMS, Visual Studio 2019, GitLab</td></tr>
+  </table>
+
+</div>
+</body>
+</html>
