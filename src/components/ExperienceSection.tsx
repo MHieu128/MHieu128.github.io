@@ -23,10 +23,10 @@ const experiences = [
     description:
       "An enterprise platform covering the full IP lifecycle — trademarks, patents, industrial designs and geographical indications — with registration and approval workflows, document management, fee calculation, domain-name management and automated crawling of external registries such as WIPO.",
     responsibilities: [
-      "Designed and shipped an AI-driven IP infringement early-warning system: a five-signal weighted risk model scoring each filing High/Medium/Low with per-factor bilingual explanations the legal team can audit, verified end to end by 46 automated tests on a production-shaped database",
-      "Added a self-learning layer — logistic regression in NumPy, retrained weekly by a Kubernetes CronJob — predicting infringement probability over a six-month horizon, with time-ordered holdout validation and AUC/precision activation gates",
-      "Kept the feature fail-safe: PostgreSQL model registry with append-only audit log, and in-process inference that falls back to the rule engine on any error; risk preview measured about 8 ms per request against a 300 ms budget",
-      "Chose trigram similarity (pg_trgm + unaccent) over embeddings to catch Vietnamese look-alike brand names, and materialized views over JSONB case data to keep trend and hotspot queries fast",
+      "Designed and shipped an AI-powered early-warning system that scores each IP filing High, Medium or Low for infringement risk, and shows the legal team the reason behind every score in both Vietnamese and English",
+      "Added a machine-learning model (logistic regression) that learns from past cases to predict infringement risk over the next six months, retrained automatically every week",
+      "Made it fail-safe: the model only goes live after it beats the existing scoring on accuracy tests, and the system falls back to the rule-based score if anything fails",
+      "Built fuzzy text matching in PostgreSQL to catch look-alike Vietnamese brand names, and tuned the reporting queries so the trend dashboards stay fast",
       "Delivered core IP features end to end across API, search, admin and crawler services — alert management, bulk IP import, domain-name management, and React Flow visualization of IP relationship and approval-workflow graphs",
       "Hardened the Python crawler (owner extraction, WIPO ID fallback matching, retry logic) and established centralized logging and observability on AKS",
     ],
